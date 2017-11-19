@@ -14,6 +14,7 @@
 </form> -->
 <div class="container">
   <div class="auth-comp">
+    <span class="auth-comp-close">close</span>
     <div class="auth-comp-logo">
       <p class="auth-comp-des">A unique social platform where 
           one can post its own good deeds
@@ -24,21 +25,27 @@
             <h2 class="auth-comp-from-title">Log In</h2>
             <div class="auth-comp-from-element" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
                 <input type="text" class="auth-comp-from-input" placeholder="Email/Phone Number" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-                <div *ngIf="!username.valid && (username.dirty || username.touched)" class="help-block">Username is required</div>
+                <div *ngIf="!username.valid && (username.dirty || username.touched)" class="auth-comp-error help-block">Username is required</div>
             </div>
             <div class="auth-comp-from-element">
-                <input type="password" class="auth-comp-from-input" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-                <div *ngIf="!password.valid && (password.dirty || password.touched)" class="help-block">Password is required</div>
+              <input type="password" class="auth-comp-from-input" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+              <a href="#" class="auth-comp-from-password"></a>
+              <div *ngIf="!password.valid && (password.dirty || password.touched)" class="auth-comp-error help-block">Password is required</div>
             </div>
             <div class="auth-comp-from-element">
               <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="login()" type="submit">Login</button>
             </div>
             <div class="auth-comp-from-element">
-                <input class="auth-comp-checkbox" type="checkbox" id="remember-me" />
-                <a href="#" class="auth-comp-remember-password">Remember me</a>
+                <input class="styled-checkbox" type="checkbox" id="remember-me" />
+                <label for="remember-me" class="auth-comp-remember-password">Remember me</label>
                 <a href="#" class="auth-comp-forgot-password">Forgot Password?</a>
-              </div>
+            </div>
         </form>
+        <div class="auth-comp-social">
+          <p class="auth-comp-social-txt">OR sign up with:</p>
+          <a href="#" class="auth-comp-social-icon auth-comp-social-facebook">facebook</a>
+          <a href="#" class="auth-comp-social-icon auth-comp-social-google">google</a>
+        <div>
     </div>
   </div>
 </div>

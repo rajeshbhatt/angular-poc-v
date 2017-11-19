@@ -61,6 +61,8 @@ a {
     height: auto;
     align-self: center;
     display: flex;
+    box-shadow: 0 0 40px #602516;
+    position: relative;
 }
 .auth-comp-logo {
     width: 35%;
@@ -83,26 +85,29 @@ a {
 .auth-comp-from-element {
     margin-top: 20px;
     font-size: 14px;
+    position: relative;
 }
 
 .auth-comp-from-input {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     border: #e5ccc5;
     border-radius: 2px;
     background: #fdeeea;
     box-shadow: 0 0 6px #e5ccc5;
     box-sizing: border-box;
+    font-size: 13px;
 }
 .auth-comp-from-submit {
     background: #f0633f;
     width: 100%;
     border-radius: 2px;
     border: 0;
-    padding: 8px 20px;
+    padding: 12px 20px;
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+    font-size: 13px;
 }
 .auth-comp-remember-password {
     font-size: 14px;
@@ -112,6 +117,19 @@ a {
     font-size: 14px;
     color: #f0633f;
     float: right;
+}
+.auth-comp-from-password {
+    width: 17px;
+    height: 10px;
+    display: inline-block;
+    background: url(../../assets/images/show-password.svg);
+    padding: 14px;
+    background-size: 47%;
+    background-position: 12px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .auth-comp-checkbox {
     margin: 0;
@@ -131,4 +149,80 @@ a {
 }
 .login-full-width {
   width: 100%;
+}
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0; 
+}
+
+.styled-checkbox  + .auth-comp-remember-password {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+.auth-comp-remember-password:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border:1px solid #656565;
+}
+
+.styled-checkbox:checked + .auth-comp-remember-password:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    background: #656565;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+      2px 0 0 #656565,
+      4px 0 0 #656565,
+      4px -2px 0 #656565,
+      4px -4px 0 #656565,
+      4px -6px 0 #656565,
+      4px -8px 0 #656565;
+    transform: rotate(45deg);
+}
+.auth-comp-social {
+    margin-top: 40px;
+}
+.auth-comp-social-txt {
+    font-size: 14px;
+}
+.auth-comp-social-icon {
+    width: 36px;
+    height: 36px;
+    background: url(../../assets/images/sprite.png);
+    text-indent: -999999px;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+}
+.auth-comp-social-facebook {
+    background-position: -3px -1px;
+}
+.auth-comp-social-google {
+    background-position: -42px -1px;
+}
+.auth-comp-error {
+    font-size: 12px;
+    padding-top: 7px;
+    color: #cf2b16;
+}
+.auth-comp-close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../../assets/images/close.svg);
+    text-indent: -99999px;
+    right: 15px;
+    top: 15px;
+    position: absolute;
+    cursor: pointer;
 }
