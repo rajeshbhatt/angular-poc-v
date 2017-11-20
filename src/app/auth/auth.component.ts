@@ -2,8 +2,10 @@ import { Component, OnInit, NgModule, ViewEncapsulation } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from "angular4-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from 'angular4-social-login';
 
 @Component({
   selector: 'app-auth',
@@ -37,15 +39,30 @@ export class AuthComponent implements OnInit {
   login () {
     debugger;
     this.loading = true;
-    this.authService.login(this.model.username, this.model.password)
-        .subscribe(
-            data => {
-                this.router.navigate([this.returnUrl]);
-            },
-            error => {
-                // this.alertService.error(error);
-                this.loading = false;
-            });
+    // this.authService.login(this.model.username, this.model.password)
+    //     .subscribe(
+    //         data => {
+    //             this.router.navigate([this.returnUrl]);
+    //         },
+    //         error => {
+    //             // this.alertService.error(error);
+    //             this.loading = false;
+    //         });
+  }
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(function(res) {
+      debugger;
+      console.log('fb : response:',res);
+      // todo set this to fb
+    });
+  }
+
+  signOut(): void {
+    this.authService.signOut();
   }
   
 }
