@@ -33,6 +33,9 @@ export class AuthComponent implements OnInit {
   ngOnInit() {
     const hide = true;
     // this.AuthService.logout();
+    if( this.userService.getUserLoggedIn()) {
+      this.router.navigate(['home']);
+    }
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -54,13 +57,12 @@ export class AuthComponent implements OnInit {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
       .then((res)=> {
         this.userService.setUserLoggedIn();
-        // this.router.navigate(['home']);
+        this.router.navigate(['home']);
       });
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((res)=> {
-      debugger;
       console.log('fb : response:',res);
       this.userService.setUserLoggedIn();
       this.router.navigate(['home']);
