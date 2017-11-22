@@ -44,5 +44,10 @@ table {
 
 
 .container {
-    background-color: #f0633f;
+	background-color: #f0633f;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: flex
 }

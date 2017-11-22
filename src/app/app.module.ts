@@ -1,3 +1,4 @@
+import { UserService } from './auth/user.service';
 import { AuthService } from './auth/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,11 +16,12 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthguardGuard } from './authguard.guard';
 
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("749636539566-b6e6r11s2k19e77jpeicstaeeokomil8.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
@@ -44,7 +46,7 @@ let config = new AuthServiceConfig([
     SocialLoginModule.initialize(config)
   ],
   providers: [
-    AuthService
+    AuthService, UserService, AuthguardGuard
 ],
   bootstrap: [AppComponent]
 })

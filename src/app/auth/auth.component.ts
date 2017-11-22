@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { Component, OnInit, NgModule, ViewEncapsulation } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
@@ -25,7 +26,8 @@ export class AuthComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,6 @@ export class AuthComponent implements OnInit {
   }
 
   login () {
-    debugger;
     this.loading = true;
     // this.authService.login(this.model.username, this.model.password)
     //     .subscribe(
@@ -50,14 +51,20 @@ export class AuthComponent implements OnInit {
     //         });
   }
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then((res)=> {
+        this.userService.setUserLoggedIn();
+        // this.router.navigate(['home']);
+      });
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(function(res) {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((res)=> {
       debugger;
       console.log('fb : response:',res);
-      // todo set this to fb
+      this.userService.setUserLoggedIn();
+      this.router.navigate(['home']);
+      // todo set this to fb  
     });
   }
 
