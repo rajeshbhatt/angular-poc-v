@@ -13,40 +13,38 @@
   </mat-form-field>
 </form> -->
 <div class="container">
-  <div class="auth-comp">
-    <span class="auth-comp-close">close</span>
-    <div class="auth-comp-logo">
-      <p class="auth-comp-des">A unique social platform where 
-          one can post its own good deeds
-          on every aspect.</p>
-    </div>
-    <div class="auth-comp-from">
-      <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="login-form form-group">
-            <h2 class="auth-comp-from-title">Log In</h2>
-            <div class="auth-comp-from-element" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-                <input type="text" class="auth-comp-from-input" placeholder="Email/Phone Number" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-                <div *ngIf="!username.valid && (username.dirty || username.touched)" class="auth-comp-error help-block">Username is required</div>
+    <div class="auth-comp">
+        <span class="auth-comp-close">close</span>
+        <div class="auth-comp-logo">
+            <p class="auth-comp-des">A unique social platform where one can post its own good deeds on every aspect.</p>
+        </div>
+        <div class="auth-comp-from">
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="login-form form-group">
+                <h2 class="auth-comp-from-title">Log In</h2>
+                <div class="auth-comp-from-element" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <input type="text" class="auth-comp-from-input" placeholder="Email/Phone Number" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                    <div *ngIf="!username.valid && (username.dirty || username.touched)" class="auth-comp-error help-block">Username is required</div>
+                </div>
+                <div class="auth-comp-from-element">
+                    <input type="password" class="auth-comp-from-input" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                    <a href="#" class="auth-comp-from-password"></a>
+                    <div *ngIf="!password.valid && (password.dirty || password.touched)" class="auth-comp-error help-block">Password is required</div>
+                </div>
+                <div class="auth-comp-from-element">
+                    <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="login()" type="submit">Login</button>
+                </div>
+                <div class="auth-comp-from-element">
+                    <input class="styled-checkbox" type="checkbox" id="remember-me" />
+                    <label for="remember-me" class="auth-comp-remember-password">Remember me</label>
+                    <a href="#" class="auth-comp-forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+            <div class="auth-comp-social">
+                <p class="auth-comp-social-txt">OR sign up with:</p>
+                <button class="auth-comp-social-icon auth-comp-social-facebook" (click)="signInWithFB()">facebook</button>
+                <button class="auth-comp-social-icon auth-comp-social-google" (click)="signInWithGoogle()">google</button>
+                <button class="auth-comp-social-icon auth-comp-social-google" (click)="signInWithTwitter()">twitter</button>
+                <div>
+                </div>
             </div>
-            <div class="auth-comp-from-element">
-              <input type="password" class="auth-comp-from-input" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-              <a href="#" class="auth-comp-from-password"></a>
-              <div *ngIf="!password.valid && (password.dirty || password.touched)" class="auth-comp-error help-block">Password is required</div>
-            </div>
-            <div class="auth-comp-from-element">
-              <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="login()" type="submit">Login</button>
-            </div>
-            <div class="auth-comp-from-element">
-                <input class="styled-checkbox" type="checkbox" id="remember-me" />
-                <label for="remember-me" class="auth-comp-remember-password">Remember me</label>
-                <a href="#" class="auth-comp-forgot-password">Forgot Password?</a>
-            </div>
-        </form>
-        <div class="auth-comp-social">
-          <p class="auth-comp-social-txt">OR sign up with:</p>
-          <button class="auth-comp-social-icon auth-comp-social-facebook" (click)="signInWithFB()">facebook</button>
-          <button class="auth-comp-social-icon auth-comp-social-google" (click)="signInWithGoogle()">google</button>
-          <button class="auth-comp-social-icon auth-comp-social-google" (click)="signInWithGoogle()">google</button>
-        <div>
-    </div>
-  </div>
-</div>
+        </div>

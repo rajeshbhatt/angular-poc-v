@@ -3,9 +3,10 @@ import { Component, OnInit, NgModule, ViewEncapsulation } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { AuthService } from './auth.service';
+// import { AuthService as a } from './auth.service';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from "angular4-social-login";
+import * as auth0 from 'auth0-js';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angular4-social-login';
 
 @Component({
@@ -23,12 +24,25 @@ export class AuthComponent implements OnInit {
   model: any = {};
   showPassword: boolean = false;
   returnUrl: string;
+
+  auth0 = new auth0.WebAuth({
+    clientID: 'XTJxBdr6W3xwlGwxdxI2VxTAHbOYaHmS',
+    domain: 'soc-rich.auth0.com',
+    responseType: 'token id_token',
+    audience: 'https://soc-rich.auth0.com/userinfo',
+    redirectUri: 'http://localhost:4200/callback',      
+    scope: 'openid'
+  });
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
     private userService: UserService
-  ) { }
+  ) {
+    userService.handleAuthentication();
+    
+   }
 
   ngOnInit() {
     const hide = true;
@@ -43,15 +57,28 @@ export class AuthComponent implements OnInit {
 
   login () {
     this.loading = true;
-    // this.authService.login(this.model.username, this.model.password)
-    //     .subscribe(
-    //         data => {
-    //             this.router.navigate([this.returnUrl]);
-    //         },
-    //         error => {
-    //             // this.alertService.error(error);
-    //             this.loading = false;
-    //         });
+    this.userService.login(this.model.username, this.model.password)
+        .subscribe(
+            data => {
+                this.router.navigate([this.returnUrl]);
+            },
+            error => {
+                // this.alertService.error(error);
+                this.loading = false;
+            });
+  }
+
+  signInWithTwitter () {
+    this.loading = true;
+    this.userService.logintwitter();
+        // .subscribe(
+        //     data => {
+        //         this.router.navigate([this.returnUrl]);
+        //     },
+        //     error => {
+        //         // this.alertService.error(error);
+        //         this.loading = false;
+        //     });
   }
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
