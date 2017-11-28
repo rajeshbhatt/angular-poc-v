@@ -21,6 +21,7 @@ import { GoogleLoginProvider, FacebookLoginProvider } from 'angular4-social-logi
 // })
 export class AuthComponent implements OnInit {
   loading: boolean = false;
+  showLogin: boolean = this.route.snapshot.routeConfig.path === 'login' ? true : false;
   model: any = {};
   showPassword: boolean = false;
   returnUrl: string;
