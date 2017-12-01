@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot-passowrd.component.css']
 })
 export class ForgotPassowrdComponent implements OnInit {
-
+  loading: boolean = false;
+  model: any = {};
   constructor() { }
 
   ngOnInit() {

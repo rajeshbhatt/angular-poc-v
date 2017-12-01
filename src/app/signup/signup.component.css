@@ -1,0 +1,309 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* RESET CSS */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #656565;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: #656565;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* login form */
+
+.auth-comp {
+    width: 40%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    height: auto;
+    align-self: center;
+    display: flex;
+    box-shadow: 0 0 40px #602516;
+    position: relative;
+}
+
+.auth-comp-logo {
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    text-align: center;
+    line-height: 18px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.auth-comp-from {
+    display: inline-block;
+    width: 65%;
+    background: #fce0d9;
+    padding: 3% 5%;
+    box-sizing: border-box;
+}
+
+.auth-comp-from-element {
+    margin-top: 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+.auth-comp-from-input {
+    width: 100%;
+    padding: 12px;
+    border: #e5ccc5;
+    border-radius: 2px;
+    background: #fdeeea;
+    box-shadow: 0 0 6px #e5ccc5;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.auth-comp-from-submit {
+    background: #f0633f;
+    width: 100%;
+    border-radius: 2px;
+    border: 0;
+    padding: 12px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.auth-comp-remember-password {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.auth-comp-forgot-password {
+    font-size: 14px;
+    color: #f0633f;
+    float: right;
+}
+
+.auth-comp-from-password {
+    width: 17px;
+    height: 10px;
+    display: inline-block;
+    background: url(../../assets/images/show-password.svg);
+    padding: 14px;
+    background-size: 47%;
+    background-position: 12px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.auth-comp-checkbox {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.auth-comp-from-title {
+    color: #f0633f;
+    font-size: 24px;
+}
+
+.container {
+    background-color: #f0633f;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: flex
+}
+
+.login-full-width {
+    width: 100%;
+}
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.styled-checkbox+.auth-comp-remember-password {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+.auth-comp-remember-password:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #656565;
+}
+
+.styled-checkbox:checked+.auth-comp-remember-password:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    background: #656565;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 #656565, 4px 0 0 #656565, 4px -2px 0 #656565, 4px -4px 0 #656565, 4px -6px 0 #656565, 4px -8px 0 #656565;
+    transform: rotate(45deg);
+}
+
+.auth-comp-error {
+    font-size: 12px;
+    padding-top: 7px;
+    color: #cf2b16;
+}
+
+.auth-comp-close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../../assets/images/close.svg);
+    text-indent: -99999px;
+    right: 15px;
+    top: 15px;
+    position: absolute;
+    cursor: pointer;
+}

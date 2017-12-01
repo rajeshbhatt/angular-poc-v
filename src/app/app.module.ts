@@ -18,6 +18,9 @@ import { HomeComponent } from './home/home.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthguardGuard } from './authguard.guard';
 import { ForgotPassowrdComponent } from './forgot-passowrd/forgot-passowrd.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { SocialloginComponent } from './sociallogin/sociallogin.component';
 
 let config = new AuthServiceConfig([
   {
@@ -35,7 +38,10 @@ let config = new AuthServiceConfig([
     AppComponent,
     HomeComponent,
     AuthComponent,
-    ForgotPassowrdComponent
+    ForgotPassowrdComponent,
+    LoginComponent,
+    SignupComponent,
+    SocialloginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+.auth-comp-social {
+    margin-top: 40px;
+}
+
+.auth-comp-social-txt {
+    font-size: 14px;
+}
+
+.auth-comp-social-icon {
+    width: 36px;
+    height: 36px;
+    background: url(../../assets/images/sprite.png);
+    text-indent: -999999px;
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    border: none;
+}
+
+.auth-comp-social-facebook {
+    background-position: -3px -1px;
+}
+
+.auth-comp-social-google {
+    background-position: -42px -1px;
+}
