@@ -6,7 +6,7 @@
         </div>
         <div class="auth-comp-from">
             <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="login-form form-group">
-                <h2 class="auth-comp-from-title">Forgot Password?</h2>
+                <h2 class="auth-comp-forget-title">Forgot Password?</h2>
                 <p> We will send you a link to reset your password.</p>
                 <p>Enter your registered email address</p>
                 <div class="auth-comp-from-element" [ngClass]="{ 'has-error': f.submitted && !username.valid }">

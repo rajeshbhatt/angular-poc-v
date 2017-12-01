@@ -103,7 +103,7 @@ a {
 	color: #fff;
 	font-size: 12px;
 	text-transform: uppercase;
-	margin-left: 20px;
+	margin-left: 14px;
 	padding-top: 10px;
 }
 .header-nav-icon {
@@ -119,4 +119,14 @@ a {
 	display: inline-block;
     text-align: center;
     color: #fff;
+}
+.temp-nav {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 14px;
+	margin: 20px 0;
+}
+.home-login {
+	padding: 10px 10px 10px 0;
 }
