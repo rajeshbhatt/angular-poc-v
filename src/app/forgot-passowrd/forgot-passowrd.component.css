@@ -333,3 +333,31 @@ a {
     position: absolute;
     cursor: pointer;
 }
+.auth-comp-logo-icon {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.auth-comp-logo-img {
+    width: 100%;
+}
+/*forget password*/
+.auth-comp-forget-title {
+    font-size: 24px;
+    color: #656565;
+    text-align: center;
+    margin: 50px 0 20px 0; 
+}
+.auth-comp-forget-des {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+.auth-comp-forget-cancel {
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.auth-comp-forget-wraps {
+    text-align: center;
+    margin: 30px 0;
+}

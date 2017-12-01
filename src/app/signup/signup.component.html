@@ -16,6 +16,7 @@
     <div class="auth-comp">
         <a class="auth-comp-close" routerLink="/">close</a>
         <div class="auth-comp-logo">
+            <div class="auth-comp-logo-icon"><img src="../../assets/images/logo-auth.png" class="auth-comp-logo-img"/></div>
             <p class="auth-comp-des">A unique social platform where one can post its own good deeds on every aspect.</p>
         </div>
         <div class="auth-comp-from">
@@ -35,12 +36,7 @@
                     <div *ngIf="!password.valid && (password.dirty || password.touched)" class="auth-comp-error help-block">Password is required</div>
                 </div>
                 <div class="auth-comp-from-element">
-                    <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="signUp()" type="submit">Sign up</button>
-                </div>
-                <div class="auth-comp-from-element">
-                    <input class="styled-checkbox" type="checkbox" id="remember-me" />
-                    <label for="remember-me" class="auth-comp-remember-password">Remember me</label>
-                    <a routerLink="/forgot-password" class="auth-comp-forgot-password">Forgot Password?</a>
+                    <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="signUp()" type="submit">Register</button>
                 </div>
             </form>
             <app-sociallogin></app-sociallogin>

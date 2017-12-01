@@ -2,13 +2,14 @@
     <div class="auth-comp">
         <a class="auth-comp-close" routerLink="/">close</a>
         <div class="auth-comp-logo">
+            <div class="auth-comp-logo-icon"><img src="../../assets/images/logo-auth.png" class="auth-comp-logo-img"/></div>
             <p class="auth-comp-des">A unique social platform where one can post its own good deeds on every aspect.</p>
         </div>
         <div class="auth-comp-from">
             <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="login-form form-group">
                 <h2 class="auth-comp-forget-title">Forgot Password?</h2>
-                <p> We will send you a link to reset your password.</p>
-                <p>Enter your registered email address</p>
+                <p class="auth-comp-forget-des"> We will send you a link to reset your password.</p>
+                <p class="auth-comp-forget-des">Enter your registered email address</p>
                 <div class="auth-comp-from-element" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
                     <input type="text" class="auth-comp-from-input" placeholder="Email" name="username" [(ngModel)]="model.username" #username="ngModel" required />
                     <div *ngIf="!username.valid && (username.dirty || username.touched)" class="auth-comp-error help-block">Email/Phone Number is required</div>
@@ -16,7 +17,7 @@
                 <div class="auth-comp-from-element">
                     <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="login()" type="submit">send reset link</button>
                 </div>
-                <a class="cancel-passowrd" href="#">cancel</a>
+                <p class="auth-comp-forget-wraps"><a class="auth-comp-forget-cancel" href="#">cancel</a></p>
             </form>
         </div>
     </div>

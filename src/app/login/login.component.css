@@ -307,3 +307,10 @@ a {
     position: absolute;
     cursor: pointer;
 }
+.auth-comp-logo-icon {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.auth-comp-logo-img {
+    width: 100%;
+}
