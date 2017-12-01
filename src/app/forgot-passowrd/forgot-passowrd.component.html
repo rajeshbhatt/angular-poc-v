@@ -13,8 +13,10 @@
                     <input type="text" class="auth-comp-from-input" placeholder="Email" name="username" [(ngModel)]="model.username" #username="ngModel" required />
                     <div *ngIf="!username.valid && (username.dirty || username.touched)" class="auth-comp-error help-block">Email/Phone Number is required</div>
                 </div>
-                <button>send reset link</button>
-                <button>cancel</button>
+                <div class="auth-comp-from-element">
+                    <button [disabled]="!f.form.valid" class="auth-comp-from-submit" (click)="login()" type="submit">send reset link</button>
+                </div>
+                <a class="cancel-passowrd" href="#">cancel</a>
             </form>
         </div>
     </div>
